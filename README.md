@@ -75,10 +75,10 @@ end
 * `data` - Send arbitrary data to InfluxDB (default: `{}`)
 
 ## Questions?
-Hop on ##simple on Freenode with any questions or concerns.
+Hop on `##simple` on Freenode with any questions or concerns.
 
 ## Author and License
-Simple Finance <ops@simple.com>
+Simple Finance \<<ops@simple.com>\>
 
 Apache License, Version 2.0
 
