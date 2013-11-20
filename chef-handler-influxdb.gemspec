@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'chef-handler-influxdb'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.author = 'Jake Davis'
   s.email = 'jake.davis5989@gmail.com'
   s.homepage = 'http://github.com/jakedavis/chef-handler-influxdb'
