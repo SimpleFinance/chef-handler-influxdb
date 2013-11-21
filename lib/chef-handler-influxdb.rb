@@ -43,7 +43,6 @@ class ChefInfluxDB < Chef::Handler
         :pass => 'root',
         :host => 'localhost',
         :port => 8086,
-        :data => {},
         :database => nil,
         :series => nil
       }
@@ -51,7 +50,7 @@ class ChefInfluxDB < Chef::Handler
 
     def client
       return InfluxDB::Client.new(
-        :database => @database,
+        @database,
         :host => @host,
         :port => @port,
         :username => @user,
@@ -60,14 +59,13 @@ class ChefInfluxDB < Chef::Handler
     end
 
     def generate_data
-      status_int = run_status.success? 
-      return JSON.generate({
+      return {
         :host => node.name,
         :status => run_status.success? ? 1 : 0,
         :resources_updated => run_status.updated_resources.length,
         :elapsed_time => run_status.elapsed_time,
         :end_time => Time.now.to_s
-      }.merge(@data))
+      }.merge(@data || {})
     end
 
     def report
