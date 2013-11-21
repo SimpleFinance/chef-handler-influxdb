@@ -27,6 +27,9 @@ chef_gem 'influxdb' do
 end.run_action(:install)
 ```
 
+You also need to make sure that the user who you want to write the data to
+InfluxDB has been created for that database (by default, that user is `root`)
+
 ## Usage
 Either just pull the handler file into the files/ directory of one of your
 cookbooks, or download as a Rubygem and source it that way.
