@@ -70,8 +70,7 @@ class ChefInfluxDB < Chef::Handler
 
     def report
       Chef::Log.info 'Exporting Chef run data to InfluxDB'
-      client.write_point(@series, generate_data)
+      client.write_point(@series, {values: generate_data})
     end
 
 end
-
